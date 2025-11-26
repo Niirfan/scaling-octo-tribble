@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เกมจับสีที่ต่างออกไป | Spot the Color</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;700&family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4144/4144784.png">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <!-- หน้าคำแนะนำ -->
+  <div id="howToPlayPage">
+    <h1>🎨 Spot the Color</h1>
+    <div class="info-box" style="max-width:480px;margin:0 auto 18px;text-align:left;background:rgba(255,255,255,0.5);border-radius:16px;padding:18px 22px;box-shadow:0 2px 12px rgba(37,99,235,0.07);">
+      <strong>วิธีการเล่น:</strong>
+      <ul>
+        <li>กรอกชื่อของคุณ (ไม่เกิน 12 ตัวอักษร)</li>
+        <li>กด <b>เริ่มเกม</b> เพื่อเริ่มจับเวลา 50 วินาที</li>
+        <li>คลิก "ช่องสี" ที่แตกต่างจากช่องอื่น</li>
+        <li>ตอบถูกได้ 10 คะแนน ไปด่านถัดไป</li>
+        <li>คลิกผิดหรือหมดเวลา เกมจะจบทันที</li>
+      </ul>
+    </div>
+    <button id="goToNameBtn">ถัดไป</button>
+  </div>
+
+  <!-- หน้ากรอกชื่อ + ประวัติ -->
+  <div id="namePage" class="hidden">
+    <h2>กรุณากรอกชื่อของคุณ</h2>
+    <input id="playerName" type="text" placeholder="กรอกชื่อของคุณ" maxlength="12">
+    <div>
+      <button id="startBtn">เริ่มเกม</button>
+      <button id="backToHowToBtn" class="secondary">ย้อนกลับ</button>
+    </div>
+
+    <h3 style="color:#2563eb;font-size:1.4rem;margin-top:30px;">🏆 Ranking</h3>
+    <table id="historyInNamePage">
+      <thead>
+        <tr>
+          <th>อันดับ</th>
+          <th>ชื่อ</th>
+          <th>ด่านสูงสุด</th>
+          <th>คะแนน</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- หน้าเกม -->
+  <div id="gamePage" class="hidden">
+    <p>ด่าน: <span id="level">1</span> | คะแนน: <span id="score">0</span> | เวลา: <span id="timer">30.00</span> วินาที</p>
+    <div id="grid" class="hidden"></div>
+    <button id="exitBtn" class="secondary">ออกจากเกม</button>
+  </div>
+
+  <!-- Custom Alert -->
+  <div id="customAlert" class="hidden">
+    <div class="alert-box">
+      <div id="customAlertMsg"></div>
+      <button id="restartBtn" class="hidden">เริ่มใหม่ทันที</button>
+      <button id="customAlertBtn">ตกลง</button>
+    </div>
+  </div>
+
+  <footer>
+    สมาชิกกลุ่ม:<br>
+    6620310008 นายนิอีรฟาน เปาะแม |
+    6620310135 นายณัฐวัฒน์ จันทรส |
+    6620310242 นายอาณัส สาแล
+  </footer>
+  <script src="spot.js"></script>
+</body>
+</html>
